@@ -2,7 +2,7 @@
 console.log("Chrome Extension is working");
 
 // --- Selects Element --- ///
-const pHover = document.querySelector('p');
+const pClicker = document.querySelector('p');
 console.log(pClicker);
 
 // --- Registers Event Listener --- ///
