@@ -1,20 +1,36 @@
 console.log('sketch loaded');
 
-let img1;
+let width = 500;
+let height = 500;
 
 // function preload() {
-    // img1 = loadImage('images/counterBackground01.png', img1 => {image(img1,0,0)});
+//     img1 = createImg('counterBackground01.png');
+//     img1.position(0,0);
 //     console.log('preloaded')
 // }
 
+
+
 function setup() {
     console.log('sketch setup');
-    img1 = loadImage('https://github.com/CraigMoore3/webScoreCounter/blob/main/02_p5js/images/counterBackground01.png', img1 => {image(img1,0,0)});
-
-//     let canvas = createCanvas(400, 400);
-//     canvas.position(0,0);
+    let c = createCanvas(width, height);
+    c.position(0,0);
 }
 
 function draw() {
     console.log('sketch looping');
+    background(0);
+    fill(255);
+
+    let typeTest = createP(counter());
+    console.log(counter);
+    typeTest.style('font-color', 'white');
+    typeTest.position(15,15);
 }
+
+function counter() {
+let millisecond = millis();
+text('milliseconds');
+}
+
+
