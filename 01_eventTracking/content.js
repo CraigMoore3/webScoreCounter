@@ -3,10 +3,10 @@ console.log("Chrome Extension is working");
 
 // --- Selects Element --- ///
 const pHover = document.querySelector('p');
-console.log(pHover);
+console.log(pClicker);
 
 // --- Registers Event Listener --- ///
-pHover.addEventListener("click", shout);
+pClicker.addEventListener("click", shout);
 
 // --- Defines Event Function --- //
 function shout(event){
