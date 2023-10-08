@@ -1,3 +1,4 @@
+console.log('Extension v0.4 is working');
 clickTracking();
 
 function setup() {
@@ -14,10 +15,6 @@ function globalTimer() {
 }
 
 function clickTracking() {
-    
-    // --- Global Actions --- //
-    console.log('Extension v0.4 is working');
-
     // --- Selects Elements --- //
     // Running into a problem with querySelectorAll vs querySelector
     // querySelectorAll flags imgQuery.addEventListener as "not a function"
