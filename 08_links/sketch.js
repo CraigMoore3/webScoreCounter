@@ -11,7 +11,6 @@ let multiClick = 0;
 clickTracking();
 linkReplace();
 
-
 function setup() {
     let c = createCanvas(250, 60);
     c.position(0,0);
@@ -19,18 +18,29 @@ function setup() {
 
 function draw(){
     background(255);
+
+    p5scoreDisplay();
     scoreDisplay();
+
     globalTimer();
     scoreCount();
 }
 
-function scoreDisplay() {
+function p5scoreDisplay() {
     fill(0);
     textSize(15);
     textFont('courier');
     text(('Total Score: ' + totalScore), 20, 20);
     text(('Multiplier: ' + scoreMultiplier + 'x'), 20, 45);
 }
+
+function scoreDisplay(){
+    let printScore = createP('Total Score: ' + totalScore + '<br>'  + 'Multiplier: ' + scoreMultiplier);
+    printScore.style('position', 'fixed');
+    printScore.style('padding', '5px');
+    printScore.style('background-color', 'orange');
+}
+
 
 function scoreCount() {
 
@@ -66,6 +76,7 @@ function userClickedGlobal() {
     gClick ++;
     // console.log('User clicked the document');
 }
+
 
 function userClickedImage() {
     iClick++;
