@@ -12,14 +12,14 @@ clickTracking();
 linkReplace();
 
 function setup() {
-    let c = createCanvas(250, 60);
-    c.position(0,0);
+    // let c = createCanvas(250, 60);
+    // c.position(0,0);
+    noCanvas();
 }
 
 function draw(){
-    background(255);
 
-    p5scoreDisplay();
+    // p5scoreDisplay();
     scoreDisplay();
 
     globalTimer();
