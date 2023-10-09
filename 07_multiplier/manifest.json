@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Web Score Counter",
+    "version": "0.7",
+
+    "web-accessible_resources": [
+        "counterBackground01.png"
+    ],
+
+    "content_scripts": [{ 
+         "matches": [ 
+             "<all_urls>"
+             ], 
+             "js": ["sketch.js", "p5.min.js"]
+         }
+    ]
+}
