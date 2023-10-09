@@ -69,6 +69,10 @@ function clickTracking() {
     // --- Event Tracking --- //
     document.addEventListener("click", userClickedGlobal); 
     imgQuery.addEventListener("click", userClickedImage);
+
+    // Add For Loop, Element Array, Element.addEventListener
+    // array.forEach(Element => {
+        // Element.addEventListener()})
 }
 
 
@@ -88,7 +92,11 @@ function clickTracking() {
 // How to use querySelectorAll with addEventListener
 // How to target all images on page?
 // How to make links accessible with cmd + click
-// Will i replace href? How to block links?
+// Will i replace href? How to block links? replace with # sign, select all 'a'
+// CMD click sends to google
+
+// numbers = [1,2,3];
+// numbersCopy = numbers.map((x) => x);
 
 // Tasks
 // Give score counter absolute positioning - follow user
