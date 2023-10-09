@@ -15,9 +15,9 @@ function setup() {
 
 function draw(){
     background(255);
-    // scoreDisplay();
-    // globalTimer();
-    // scoreCount();
+    scoreDisplay();
+    globalTimer();
+    scoreCount();
     
 }
 
@@ -59,6 +59,7 @@ function globalTimer() {
 function userClickedGlobal() {
     gClick ++;
     // console.log('User clicked the document');
+
 }
 
 function userClickedImage() {
