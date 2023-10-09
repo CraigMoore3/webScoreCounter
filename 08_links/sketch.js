@@ -15,9 +15,10 @@ function setup() {
 
 function draw(){
     background(255);
-    scoreDisplay();
-    globalTimer();
-    scoreCount();
+    // scoreDisplay();
+    // globalTimer();
+    // scoreCount();
+    
 }
 
 function scoreDisplay() {
@@ -79,7 +80,11 @@ function clickTracking() {
     imgQuery.addEventListener("click", userClickedImage);
 }
 
-
+// function linkReplace() {
+//     const findLinks = document.querySelectorAll('a');
+//     console.log(findLinks);
+//     findLinks.forEach();
+// }
 
 // Questions
 // How to get scoreCounterBackground01.png to load?
