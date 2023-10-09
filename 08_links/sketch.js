@@ -12,26 +12,13 @@ clickTracking();
 linkReplace();
 
 function setup() {
-    // let c = createCanvas(250, 60);
-    // c.position(0,0);
     noCanvas();
 }
 
 function draw(){
-
-    // p5scoreDisplay();
     scoreDisplay();
-
     globalTimer();
     scoreCount();
-}
-
-function p5scoreDisplay() {
-    fill(0);
-    textSize(15);
-    textFont('courier');
-    text(('Total Score: ' + totalScore), 20, 20);
-    text(('Multiplier: ' + scoreMultiplier + 'x'), 20, 45);
 }
 
 function scoreDisplay(){
@@ -40,7 +27,6 @@ function scoreDisplay(){
     printScore.style('padding', '5px');
     printScore.style('background-color', 'orange');
 }
-
 
 function scoreCount() {
 
@@ -71,12 +57,10 @@ function globalTimer() {
     }
 }
 
-
 function userClickedGlobal() {
     gClick ++;
     // console.log('User clicked the document');
 }
-
 
 function userClickedImage() {
     iClick++;
@@ -122,7 +106,6 @@ function linkReplace() {
 // CMD click sends to google
 
 // Tasks
-// Give score counter absolute positioning - follow user
 // Implement time-based multipliers
 
 // Multiplier
