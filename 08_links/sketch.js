@@ -1,5 +1,5 @@
 console.log('Extension v0.8 is working');
-clickTracking();
+
 let t, seconds;
 let gClick = 0;
 let iClick = 0;
@@ -7,6 +7,10 @@ let lClick = 0;
 let totalScore = 0;
 let scoreMultiplier = 1;
 let multiClick = 0;
+
+clickTracking();
+linkReplace();
+
 
 function setup() {
     let c = createCanvas(250, 60);
@@ -18,7 +22,6 @@ function draw(){
     scoreDisplay();
     globalTimer();
     scoreCount();
-    
 }
 
 function scoreDisplay() {
@@ -30,16 +33,18 @@ function scoreDisplay() {
 }
 
 function scoreCount() {
+
     // 1 Second - 1 Point
-    // Math.trunc() removes decimal
     const timePoints = int(Math.trunc(seconds));
     // Click - 10 Points
     const globalClickPoints = int((gClick*10)*scoreMultiplier);
     // Image Click - 100 Points
     const imgClickPoints = int((iClick*100)*scoreMultiplier);
+    // Link Click - 1000 Points
+    const linkClickPoints = int((lClick*1000)*scoreMultiplier);
 
-    totalScore = int(timePoints + imgClickPoints + globalClickPoints);
-    console.log("total score:" + totalScore);
+    totalScore = int(timePoints + imgClickPoints + linkClickPoints + globalClickPoints);
+    // console.log("total score:" + totalScore);
 }
 
 function multi() {
@@ -56,10 +61,10 @@ function globalTimer() {
     }
 }
 
+
 function userClickedGlobal() {
     gClick ++;
     // console.log('User clicked the document');
-
 }
 
 function userClickedImage() {
@@ -68,46 +73,46 @@ function userClickedImage() {
     // console.log('User clicked an image');
 }
 
-function clickTracking() {
-    // --- Selects Elements --- //
-    // Running into a problem with querySelectorAll vs querySelector
-    // querySelectorAll flags imgQuery.addEventListener as "not a function"
-    // Returning to querySelector fixes the issue. 
-    // Do I need to hold the return of querySelectorAll in an array?
-    let imgQuery = document.querySelector('img');
-
-    // --- Event Tracking --- //
-    document.addEventListener("click", userClickedGlobal); 
-    imgQuery.addEventListener("click", userClickedImage);
+function userClickedLink() {
+    lClick++
+    multi();
+    // console.log('User clicked a link');
 }
 
-// function linkReplace() {
-//     const findLinks = document.querySelectorAll('a');
-//     console.log(findLinks);
-//     findLinks.forEach();
-// }
+function clickTracking() {
+
+    // --- Global Clicks --- //
+    document.addEventListener("click", userClickedGlobal); 
+
+    // --- Image Clicks --- //
+    let imgQuery = document.querySelectorAll('img');
+    // Doesn't account for certain styles of image, figure
+    imgQuery.forEach((img) => {
+        img.addEventListener("click", userClickedImage)
+    });
+    
+    // --- Link Clicks --- //
+    let linkQuery = document.querySelectorAll("a");
+    linkQuery.forEach((link) => {
+        link.addEventListener("click", userClickedLink)
+    });
+}
+
+function linkReplace() {
+    var findLinks = document.querySelectorAll('a');
+    // console.log(findLinks);
+    for (var i = 0; i < findLinks.length; i++) {
+        findLinks[i].href = "#" + findLinks[i].href
+    }
+}
 
 // Questions
-// How to get scoreCounterBackground01.png to load?
-// How to use querySelectorAll with addEventListener
-// How to target all images on page?
 // How to make links accessible with cmd + click
-// Will i replace href? How to block links? replace with # sign, select all 'a'
 // CMD click sends to google
-
-// numbers = [1,2,3];
-// numbersCopy = numbers.map((x) => x);
 
 // Tasks
 // Give score counter absolute positioning - follow user
 // Implement time-based multipliers
-
-// Add For Loop, Element Array, Element.addEventListener
-    // array.forEach(Element => {
-        // Element.addEventListener()})
-
-
-
 
 // Multiplier
 // Successive clicks build multi - 500 millis
