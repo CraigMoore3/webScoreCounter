@@ -4,9 +4,11 @@ Click on pages, images, and links to rack up a high score! Get rewarded for your
 
 ## Setup
 
-* Go to ![Chrome://Extensions](chrome://Extensions)
+* Clone the repo
+* Go to "chrome://extensions"
 * Enable Developer Mode
-* Load Unpacked > Select src
+* Load Unpacked
+* Select src folder
 * Refresh the Extension and go Score!
 
 ## Websites to test
